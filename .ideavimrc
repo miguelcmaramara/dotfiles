@@ -1,0 +1,204 @@
+"
+" Welcome to my init.vim!
+"
+
+" Just to get it out of the way
+"set noerrorbells
+"set syntax
+"set encoding=utf-8
+"filetype plugin on
+"set nocompatible
+
+" Numbers and relative numbers
+"set nu
+"set rnu
+
+" Tabs and spaces
+"set tabstop=4 softtabstop=4
+"set shiftwidth=4
+"set expandtab
+"set smartindent
+
+" mid-search highlighting and with smartcase
+"set hlsearch
+"set incsearch
+"set ignorecase
+"set smartcase
+
+" scrolling, wrapping, and linebreaking
+"set scrolloff=8
+"set sidescroll=15
+"set sidescroll=1
+"set nowrap
+" set linebreak
+
+" swap files and undo
+"set noswapfile
+"set nobackup
+"set undodir=~/.nvim/undodir
+"set undofile
+
+" Plugins
+"call plug#begin('~/.nvim/plugged')
+
+"Plug 'tpope/vim-fugitive'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
+
+"Plug 'scrooloose/syntastic'
+
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'vimwiki/vimwiki'
+
+"Plug 'mbbill/undotree'
+"Plug 'preservim/nerdtree'
+"Plug 'tpope/vim-surround'
+"Plug 'preservim/nerdcommenter'
+
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
+"Plug 'gruvbox-community/gruvbox'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+
+
+"Plug 'gruvbox-community/gruvbox'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'ap/vim-css-color'
+
+"call plug#end()
+
+" Shortcuts!
+"let mapleader=" "
+"nnoremap <leader>pv :NERDTreeToggle<CR>
+"nnoremap <leader>u :UndotreeShow<CR>
+"nnoremap <silent><leader>z :Goyo<CR>
+"nnoremap <silent> <C-p> :Files<CR>
+
+"nnoremap <leader>`p o``` python<CR>```<Esc>O
+"nnoremap <leader>`c o``` cpp<CR>```<Esc>O
+"nnoremap <leader>`s o``` sh<CR>```<Esc>O
+
+"nnoremap <leader>y<leader> "+y
+"nnoremap <leader>yy<leader> "+yy
+"nnoremap <leader>p<leader> "+p
+"nnoremap <leader>wp :w !python<CR>
+"nnoremap <leader>ka :!tmux kill-server<CR>
+"nnoremap <leader>ks :!tmux kill-session<CR>
+"nnoremap <leader>kw :!tmux kill-window<CR>
+"nnoremap <leader>kp :!tmux kill-pane<CR>
+
+"nnoremap <leader>gs :G<CR>
+"" Colors! :)))
+"colorscheme gruvbox
+"set termguicolors
+"set background=dark
+"let g:airline_theme='gruvbox'
+"hi Normal guibg=NONE ctermbg=NONE
+
+""Syntastic settings -------------
+"let g:syntastic_java_checkers = ['checkstyle']
+"let g:syntastic_java_checkstyle_classpath = './checkstyle-8.4-all.jar'
+"let g:syntastic_java_checkstyle_conf_file = './checkstyle.xml'
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+""--------------------------------
+
+""VimWiki Options
+"let vimwiki = {}
+"let vimwiki.path = '~/ExtremeSSD_NTFS/wiki/migwiki'
+"let vimwiki.syntax = 'markdown'
+"let vimwiki.ext = '.md'
+"let vimwiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'sh': 'sh', 'java': 'java'}
+
+"let g:vimwiki_list = [vimwiki]
+
+
+""Limelight/Goyo settings
+"" Including other paragraphs
+ "let g:limelight_paragraph_span = 3
+
+"" Color name (:help gui-colors) or RGB color
+"let g:limelight_conceal_guifg = 'DarkGray'
+"let g:limelight_conceal_guifg = '#777777'
+
+"" Highlighting priority (default: 10)
+""   Set it to -1 not to overrule hlsearch
+"let g:limelight_priority = -1
+
+"function! s:goyo_enter()
+    "if executable('tmux') && strlen($TMUX)
+        "silent !tmux set status off
+        "silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    "endif
+    "set noshowmode
+    "set noshowcmd
+    "set scrolloff=999
+    "Limelight
+"endfunction
+
+"function! s:goyo_leave()
+    "if executable('tmux') && strlen($TMUX)
+        "silent !tmux set status on
+        "silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    "endif
+    "set showmode
+    "set showcmd
+    "Limelight!
+    "source ~/.config/nvim/init.vim
+"endfunction
+
+"autocmd! User GoyoEnter nested call <SID>goyo_enter()
+"autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+set rnu
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader>d :action Debug<CR>
+map <leader>r :action RenameElement<CR>
+map <leader>c :action Stop<CR>
+map <leader>z :action ToggleDistractionFreeMode<CR>
+
+map <leader>s :action SelectInProjectView<CR>
+map <leader>a :action Annotate<CR>
+map <leader>h :action Vcs.ShowTabbedFileHistory<CR>
+map <S-Space> :action GotoNextError<CR>
+
+map <leader>b :action ToggleLineBreakpoint<CR>
+map <leader>o :action FileStructurePopup<CR>
