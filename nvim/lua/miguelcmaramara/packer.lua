@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
     use('mbbill/undotree') -- undo tree
 
     use('tpope/vim-fugitive') -- git functionality
+    use('airblade/vim-gitgutter') -- git gutt3er
 
     use { --lsp
         'VonHeikemen/lsp-zero.nvim',
