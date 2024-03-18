@@ -23,6 +23,7 @@ vim.opt.colorcolumn = "80"              -- Sets a colored column at 80 chars
 --highlight ColorColumn ctermbg=0 guibg=lightgrey
 vim.opt.cursorline = true               -- Sets a colored row at cursor
 -- highlight CursorLine ctermbg=0 guibg=lightgrey
+vim.opt.signcolumn="yes:5"
 
 -- Search functionality
 vim.opt.hlsearch = true                 -- search highlights persist

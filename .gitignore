@@ -1,2 +1,29 @@
 /nvim/undo-dir/*
 /libreoffice
+/spotifyd/spotifyd.conf
+/Cypress/
+/Docker Desktop/
+/GIMP/
+/MongoDB Compass/
+/QtProject.conf
+/Thunar/
+/astro/
+/chromium/
+/discord/
+/gh/
+/gtk-2.0/
+/gtk-3.0/
+/htop/
+/lazygit/
+/mimeapps.list
+/nvim/after/plugin/vimspector.lua
+/obsidian/
+/ranger/
+/spotify-tui/
+/spotify/
+/spotifyd/
+/systemd/
+/vimspector-config/
+/vlc/
+/wireshark/
+/xfce4/

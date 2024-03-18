@@ -28,3 +28,5 @@ lsp.setup_nvim_cmp({
 
 
 lsp.setup()
+vim.opt.signcolumn="yes:2"
+
