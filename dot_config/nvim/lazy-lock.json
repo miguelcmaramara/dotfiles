@@ -1,6 +1,7 @@
 {
   "LazyVim": { "branch": "main", "commit": "0107a1079be7fb92f7d5b7e2c40818f47cf425d9" },
   "LuaSnip": { "branch": "master", "commit": "a7a4b4682c4b3e2ba82b82a4e6e5f5a0e79dec32" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "4d798fd5b692c8fce77268aba8f6f926b0c9f835" },
   "catppuccin": { "branch": "main", "commit": "045e3499d9ec8d84635fb08877ae44fd33f6a38d" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
@@ -30,6 +31,7 @@
   "neodev.nvim": { "branch": "main", "commit": "84e0290f5600e8b89c0dfcafc864f45496a53400" },
   "noice.nvim": { "branch": "main", "commit": "bf67d70bd7265d075191e7812d8eb42b9791f737" },
   "nui.nvim": { "branch": "main", "commit": "cbd2668414331c10039278f558630ed19b93e69b" },
+  "nvim-ansible": { "branch": "main", "commit": "d115cb9bb3680c990e2684f58cf333663fff03b8" },
   "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
   "nvim-lint": { "branch": "master", "commit": "03b1fc593638098a35de26d768d5f43b0fe57041" },
   "nvim-lspconfig": { "branch": "master", "commit": "8c1831817d40925d22cd8a555296c44c02fdaaf5" },
