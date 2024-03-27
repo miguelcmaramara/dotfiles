@@ -1,4 +1,5 @@
 return {
+
   { "ellisonleao/gruvbox.nvim" },
   { "catppuccin/nvim", name = "catppuccin" },
   { "loctvl842/monokai-pro.nvim" },
