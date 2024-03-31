@@ -1,0 +1,43 @@
+# .zshrc taken from Luke Smith!
+
+
+
+# Enable colors and change prompt:
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
+}
+
+autoload -U colors && colors
+COLOR_DEF=$'%f'
+COLOR_USR='yellow'
+COLOR_DIR='magenta'
+COLOR_GIT='blue'
+setopt PROMPT_SUBST
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%} %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+export PROMPT=' %{$fg[$COLOR_DIR]%}%~ %{$fg[$COLOR_GIT]%}$(parse_git_branch)${COLOR_DEF}$ '
+
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+bindkey -s '^f' "tmux-sessionizer\n"  # new stuff
+bindkey -s '^n' "nvim\n"  # new stuff
+
+# Load zsh-syntax-highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
