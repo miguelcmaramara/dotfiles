@@ -1,0 +1,13 @@
+# Profile file runs on login. set environment variables here
+
+export PATH="$PATH:$HOME/.local/bin/"
+
+export EDITOR="nvim"
+export TERMINAL="alacrity"
+
+export ZDOTDIR="$HOME/.config/zsh"
+
+# TODO: debugging awesome
+# if [[ -z $DISPLAY  ]]; then
+# startx
+# fi
