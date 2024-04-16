@@ -6,6 +6,8 @@ export EDITOR="nvim"
 export TERMINAL="alacrity"
 
 export ZDOTDIR="$HOME/.config/zsh"
+export ZDOTDIR="$HOME/.config/zsh"
+export GRIM_DEFAULT_DIR="$HOME/HD/pictures/screenshots/"
 
 # TODO: debugging awesome
 # if [[ -z $DISPLAY  ]]; then
