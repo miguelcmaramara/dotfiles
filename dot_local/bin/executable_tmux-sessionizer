@@ -14,12 +14,17 @@ selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-	tmux new-session -s $selected_name -c $selected
+	tmux new-session -d -s $selected_name -c $selected
+	tmux new-window -c $selected
+	tmux select-window -l
+	tmux attach-session -t $selected_name
 	exit 0
 fi
 
 if ! tmux has-session -t=$selected_name 2>/dev/null; then
 	tmux new-session -ds $selected_name -c $selected
+	tmux new-window -t $selected_name: -c $selected
+	tmux select-window -l
 fi
 
 if [[ -z $TMUX ]]; then
