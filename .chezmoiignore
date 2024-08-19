@@ -1,13 +1,11 @@
 README.md
 
 {{- if eq .chezmoi.os "darwin" }}
-dot_config/* #ignore everything
+* #ignore everything
 # except specific dirs
 !dot_config/alacritty
 !dot_config/nvim
 !dot_config/tmux
 
-# don't change bash/zsh profiles
-dot_bash_profile
-dot_zprofile
+!dot_local/executable_tmux-sessionizer
 {{- end }}
