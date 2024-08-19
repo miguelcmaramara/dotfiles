@@ -3,9 +3,9 @@ README.md
 {{- if eq .chezmoi.os "darwin" }}
 * #ignore everything
 # except specific dirs
-!dot_config/alacritty
-!dot_config/nvim
-!dot_config/tmux
+!.config/alacritty
+!.config/nvim
+!.config/tmux
 
-!dot_local/executable_tmux-sessionizer
+!.local/executable_tmux-sessionizer
 {{- end }}
