@@ -1,11 +1,14 @@
 README.md
 
 {{- if eq .chezmoi.os "darwin" }}
-* #ignore everything
+.config/* #ignore everything
+
 # except specific dirs
 !.config/alacritty
 !.config/nvim
 !.config/tmux
+!.config/wallpaper
 
-!.local/executable_tmux-sessionizer
+.zprofile
+.bash_profile
 {{- end }}
