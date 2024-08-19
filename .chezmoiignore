@@ -6,4 +6,8 @@ dot_config/* #ignore everything
 !dot_config/alacritty
 !dot_config/nvim
 !dot_config/tmux
+
+# don't change bash/zsh profiles
+dot_bash_profile
+dot_zprofile
 {{- end }}
