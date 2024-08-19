@@ -1,1 +1,9 @@
 README.md
+
+{{- if eq .chezmoi.os "darwin" }}
+dot_config/* #ignore everything
+# except specific dirs
+!dot_config/alacritty
+!dot_config/nvim
+!dot_config/tmux
+{{- end }}
