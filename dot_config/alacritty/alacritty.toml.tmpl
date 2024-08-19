@@ -1,0 +1,11 @@
+[window.padding]
+x = 5 
+y = 10
+
+[font]
+{{ if eq .chezmoi.os "darwin" }}
+# macOS-specific code
+size = 18 
+{{ else }}
+size = 13
+{{ end }}

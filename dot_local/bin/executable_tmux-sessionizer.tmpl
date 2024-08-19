@@ -3,7 +3,11 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
+{{ if eq .chezmoi.os "darwin" }}
+	selected=$(find ~/.config ~/workspace -mindepth 1 -maxdepth 1 -type d | fzf)
+{{ else }}
 	selected=$(find ~/HD/__projects ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+{{ end }}
 fi
 
 if [[ -z $selected ]]; then
